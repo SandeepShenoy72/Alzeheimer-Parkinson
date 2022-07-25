@@ -1,0 +1,58 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Anton', sans-serif;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: white;
+}
+
+.row{
+  display: flex;
+  padding-left: 50%;
+  padding-right: 50%;
+}
+.column{
+  width: 30%;
+  margin: 12%;
+}
+  
+      </style>
+  </head>
+  <body>
+    <h1 style="padding-top: 50px; text-align: center;"> PARKINSON'S AND ALZHEIMERS</h1>
+  <div class="row">
+    <div class="column">
+      <a href="{{url_for('parkin')}}" class="button">PARKINSON</a>
+    </div>
+    <div class="column">
+      <a href="{{url_for('alzheimers')}}" id="demo"  class="button">ALZHEIMER</a>
+      <!-- <button onclick="load()"> -->
+        <!-- {{url_for('alzheimers',user='%')}} -->
+        <!-- onclick="javascript:load()" -->
+      </button>
+      <!-- <a id="demo"></a> -->
+    </div>
+  </div>
+  <script>
+    function load(){
+      var userName=localStorage.getItem("name")
+
+      return 'alzheimers/$(userName)'
+      // url_for('alzheimers',user=userName)
+      // document.getElementById("myText").innerHTML = user;
+    }
+  </script>
+  </body>
+  </html>
